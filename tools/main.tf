@@ -6,7 +6,7 @@ module "tools" {
     instance_type= each.value.instance_type
     zone_id = var.zone_id  
     zone_name= var.zone_name 
-    name    = var.name
+    name    = each.name
 }
 
 # resource "aws_s3_bucket" "example" {
