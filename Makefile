@@ -25,4 +25,4 @@ prod-destroy:
 	terraform destroy -auto-approve -var-file=./environments/prod/main.tfvars
 
 tools-infra:
-	cd tools ; ls -l
+	cd tools ; pwd
