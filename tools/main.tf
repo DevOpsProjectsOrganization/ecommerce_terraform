@@ -6,6 +6,6 @@ module "tools" {
     instance_type= each.value.instance_type
     zone_id = var.zone_id  
     zone_name= var.zone_name 
-    name    = each.name
+    name    = each.key
 }
 
