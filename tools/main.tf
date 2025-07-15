@@ -3,7 +3,8 @@ module "tools" {
     ami     =  var.ami
     env     = var.env
     instance_type= var.instance_type
-    zone_id = var.zone_id   
+    zone_id = var.zone_id  
+    zone_name= var.zone_name 
 }
 
 # resource "aws_s3_bucket" "example" {

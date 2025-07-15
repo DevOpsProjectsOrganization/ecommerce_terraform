@@ -16,3 +16,6 @@ variable "ami" {
 variable "zone_id" {
   default = "Z08786032W2NWXT9UW4JD"
 }  
+variable "zone_name" {
+    default = "sdevops.shop"
+}
