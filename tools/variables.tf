@@ -1,7 +1,3 @@
-variable "env" {
-    default = null
-}
-
 variable "tools" {
   default ={
     vault = {
@@ -18,3 +14,4 @@ variable "zone_id" {
 variable "zone_name" {
     default = "sdevops.shop"
 }
+variable name {}
