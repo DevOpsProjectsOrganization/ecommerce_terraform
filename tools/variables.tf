@@ -3,8 +3,10 @@ variable "env" {
 }
 
 variable "tools" {
+  default ={
     vault = {
-      instance_type = "t2.micro" 
+          instance_type = "t2.micro" 
+      }
   }
 }
 variable "ami" {
