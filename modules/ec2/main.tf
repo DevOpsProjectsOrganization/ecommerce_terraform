@@ -33,7 +33,7 @@ resource "null_resource" "ansible"{
          connection {
             type     = "ssh"
             user     = "ec2-user"
-            password = "DevOps321"
+            private_key = file("~/.ssh/your-key.pem") 
             host     = aws_instance.my_instance.private_ip
         }
         inline = [
