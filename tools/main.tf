@@ -1,7 +1,7 @@
 module "tools" {
     for_each        = var.tools
     source          = "../modules/ec2"
-    name            = each.key
+    name            = each.value
     ami             =  var.ami
     env             = var.env
     instance_type   = each.value.instance_type
