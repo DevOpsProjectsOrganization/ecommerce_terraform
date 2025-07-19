@@ -4,3 +4,4 @@ variable "instance_type" {}
 variable "zone_id" {}
 variable "zone_name" {}
 variable "name" {}
+variable "token" {}
