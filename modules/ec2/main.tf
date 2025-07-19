@@ -37,6 +37,8 @@ resource "null_resource" "ansible"{
             host     = aws_instance.my_instance.private_ip
         }
         inline = [
+            "sudo yum update -y",
+            "sudo yum install -y python3 python3-pip",
             "sudo pip3.11 install ansible hvac",
             "ansible-pull -i localhost, -U https://github.com/DevOpsProjectsOrganization/ecommerce_ansible roboshop.yml -e role=${var.name} token=${var.token}"
         ]
