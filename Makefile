@@ -1,28 +1,28 @@
 dev-init:
 	rm -rf ./terraform/terraform.tfstate
-	terraform init
+	terraform init  -var-file=./environments/dev/state.tfvars
 dev-plan:
-	terraform init
+	terraform init  -var-file=./environments/dev/state.tfvars
 	terraform plan -var-file=./environments/dev/main.tfvars 
 dev-apply:
-	terraform init
-	terraform apply -auto-approve -var-file=./environments/dev/main.tfvars 
+	terraform init  -var-file=./environments/dev/state.tfvars
+	terraform apply -auto-approve -var-file=./environments/dev/main.tfvars -var token=$(token)
 dev-destroy:
-	terraform init
-	terraform destroy -auto-approve -var-file=./environments/dev/main.tfvars
+	terraform init  -var-file=./environments/dev/state.tfvars
+	terraform destroy -auto-approve -var-file=./environments/dev/main.tfvars -var token=$(token)
 
 prod-init:
 	rm -rf ./terraform/terraform.tfstate
-	terraform init
+	terraform init -var-file=./environments/dev/state.tfvars
 prod-plan:
-	terraform init
+	terraform init -var-file=./environments/dev/state.tfvars
 	terraform plan -var-file=./environments/prod/main.tfvars
 prod-apply:
-	terraform init
-	terraform apply -auto-approve -var-file=./environments/prod/main.tfvars
+	terraform init -var-file=./environments/dev/state.tfvars
+	terraform apply -auto-approve -var-file=./environments/prod/main.tfvars -var token=$(token)
 prod-destroy:
-	terraform init
-	terraform destroy -auto-approve -var-file=./environments/prod/main.tfvars
+	terraform init -var-file=./environments/dev/state.tfvars
+	terraform destroy -auto-approve -var-file=./environments/prod/main.tfvars -var token=$(token)
 
 tools-infra:
 	git pull
