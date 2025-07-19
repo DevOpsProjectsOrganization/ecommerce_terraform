@@ -3,10 +3,10 @@ dev-init:
 	terraform init
 dev-plan:
 	terraform init
-	terraform plan -var-file=./environments/dev/main.tfvars
+	terraform plan -var-file=./environments/dev/main.tfvars -var-file=./environments/dev/state.tfvars
 dev-apply:
 	terraform init
-	terraform apply -auto-approve -var-file=./environments/dev/main.tfvars
+	terraform apply -auto-approve -var-file=./environments/dev/main.tfvars -var-file=./environments/dev/state.tfvars
 dev-destroy:
 	terraform init
 	terraform destroy -auto-approve -var-file=./environments/dev/main.tfvars
