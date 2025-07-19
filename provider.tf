@@ -3,5 +3,9 @@ provider "aws" {
 }
 
 terraform {
-    backend "s3" {}
+    backend "s3" {
+        bucket  = terraform-bucket-85"
+        key     = "ecommerce_terraform/{{var.env}}/terraform.tfstate"
+        region  = "us-east-1"
+    }
 }
