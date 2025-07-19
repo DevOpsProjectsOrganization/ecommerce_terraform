@@ -1,7 +1,7 @@
 instances = {
-    frontend = {
-        instance_type = "t2.micro"
-    }
+    #frontend = {
+    #    instance_type = "t2.micro"
+    #}
     # mongodb = {
     #     instance_type = "t2.micro"
     # }
@@ -14,9 +14,9 @@ instances = {
     # user = {
     #     instance_type = "t2.micro"
     # }
-    # cart = {
-    #     instance_type = "t2.micro"
-    # }
+    cart = {
+         instance_type = "t2.micro"
+     }
     # mysql = {
     #     instance_type = "t2.micro"
     # }
