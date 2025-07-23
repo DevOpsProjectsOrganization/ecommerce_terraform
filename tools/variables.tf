@@ -17,3 +17,4 @@ variable "zone_name" {
 variable "env" {
   default = null 
 }
+variable "token" {}
