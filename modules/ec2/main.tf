@@ -25,7 +25,10 @@ resource "aws_route53_record" "my_public_record"{
 }
 
 resource "null_resource" "ansible"{
-    count = var.env == null ? timestamp() :1
+    triggers= {
+        always = var.env==null ? timestamp() :"false"
+    }
+    #count = var.env == null ?0 :1
     depends_on = [aws_route53_record.my_private_record]
     provisioner "remote-exec"{
          connection {
@@ -36,7 +39,7 @@ resource "null_resource" "ansible"{
         }
         inline = [
             "sudo pip3.11 install ansible hvac",
-            "ansible-pull -i localhost, -U https://github.com/DevOpsProjectsOrganization/ecommerce_ansible roboshop.yml -e role=${var.name}  -e env=${var.env}"
+            "ansible-pull -i localhost, -U https://github.com/DevOpsProjectsOrganization/ecommerce_ansible roboshop.yml -e role=${var.name} -e env=${var.env}"
         ]
        
     }
