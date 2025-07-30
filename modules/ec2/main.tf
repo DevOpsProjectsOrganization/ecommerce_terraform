@@ -29,6 +29,7 @@ resource "null_resource" "ansible"{
     #   always = var.env==null ? timestamp() :"false"
     #}
     count = var.env == null ?0 :1
+    depends_on = [aws_instance.my_instance]
     depends_on = [aws_route53_record.my_private_record]
     provisioner "remote-exec"{
          connection {
