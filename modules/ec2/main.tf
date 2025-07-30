@@ -29,8 +29,10 @@ resource "null_resource" "ansible"{
     #   always = var.env==null ? timestamp() :"false"
     #}
     count = var.env == null ?0 :1
-    depends_on = [aws_instance.my_instance]
-    depends_on = [aws_route53_record.my_private_record]
+   
+    depends_on = [
+        aws_route53_record.my_private_record, 
+        aws_instance.my_instance]
     provisioner "remote-exec"{
          connection {
             type     = "ssh"
