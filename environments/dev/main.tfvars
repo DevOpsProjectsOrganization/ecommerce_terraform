@@ -1,7 +1,5 @@
 instances = {
-frontend = {
-    instance_type = "t2.micro"
-}
+
     mongodb = {
         instance_type = "t2.micro"
     }
@@ -32,6 +30,9 @@ frontend = {
     dispatch = {
         instance_type = "t2.micro"
     }
+    frontend = {
+    instance_type = "t2.micro"
+}
 }
 
 ami     = "ami-09c813fb71547fc4f"
